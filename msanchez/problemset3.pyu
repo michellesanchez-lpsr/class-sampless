@@ -1,0 +1,8 @@
+print("Welcome to PumaPix!")
+print("Enter your 5 favorite TV shows.")
+
+usersList = []
+
+while usersList == 5:
+	usersList = raw_input()	
+	print(usersList)

@@ -1,0 +1,14 @@
+print(" How many dogs do you have? ")
+
+dogs = raw_input()
+
+x = dogs
+
+str(x)
+
+print( " Oh so you have " + x + " dogs . "
+)
+
+str(4 * x)
+
+print(" In two months, you will have" + months + " dogs ")

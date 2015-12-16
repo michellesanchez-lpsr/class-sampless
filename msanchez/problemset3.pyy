@@ -1,0 +1,6 @@
+print("Welcome to PumaPix!")
+print("Enter your 5 favorite TV shows.")
+
+usersList = ['CSI', 'PLL']
+for x in usersList:
+	print( x + "usersList") 
