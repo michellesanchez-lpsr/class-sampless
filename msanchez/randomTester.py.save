@@ -1,7 +1,0 @@
-import random
-
-n = random.randint(1,10)
-print(" n is " +str(n))
-
-if n is <= x5:
-	print(" Sorry, you lose. ")

@@ -1,7 +1,0 @@
-hello = "hello, world"
-x = 5 
-
-
-
-print(hello) 
-print(x)
