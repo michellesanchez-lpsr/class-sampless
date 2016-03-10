@@ -1,6 +1,5 @@
 
 
-
 # teamManager.py This Class allows you to create your own soccer team
 class Player(object):
 	def __init__( self, name, age, goals, jersey, position):
@@ -20,7 +19,7 @@ class Player(object):
 def saveTeam(list, filename):
 	file = open((filename), "a")
 	# write to the file
-	for b in listt:
+	for b in list:
 		file.write(b.name + " " + str(b.age)+ " " + str(b.goals) + " " + str(b.jersey) + " " + b.position + '\n' )
 	# close the file
 	file.close()
@@ -49,28 +48,25 @@ def loadTeam(filename):
 print("Welcome to Team Manager Deluxe!")
 print("Do you want to start with a new team or an existing team?")
 print("Enter the number of your choice and press enter")
-print("(1) Start with a new team")
-print("(2) open a file for an existing team")
-OneOrTwo = raw_input()
+print("(a) Start with a new team")
+print("(b) open a file for an existing team")
+aOrb = raw_input()
 
-if OneOrTwo == "1" or OneOrTwo == "2"
+if aOrb == "a" or aOrb == "b":
 	print("What's the filename for your existing team? Enter the whole name, including its .tmd extension")
 	fileName = raw_input()
-
-
-
-user_choice = int(raw_input())
-
-if user_choice == 2:
-	print("What's the filername for your existing team? Enter the whole name, inclusing its .tmd extension.")
+	list = loadTeam(filename)
+	print("Here are all the players ...")
 	filename = raw_input()
 	my_player = loadTeam(filername)
-else:
-	my_players = []	
+	print("Here are all the pllayers...")
 
+
+elif aOrB == "a" or aOrB == "A":
+	print(" ")
+	list = []
+userChoice = 1
 	
-def saveTeam(playerlist, filename):
-	pass
 
 
 # make your list of players
