@@ -1,0 +1,37 @@
+body {
+	background-color: #B6B6B4;
+	font-family: Arial, sans-saraif;
+}
+
+h1, h2, h3{
+	font-family: Comic Sans MS Bold;
+	margin: 0;
+	text-align:center;
+}
+
+
+#container{
+	background-color:white;
+	width:1000px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#header {
+	background-color:#000000;
+	color:white;
+	text-align: center;
+	padding: 10px;
+}
+
+#content {
+	padding: 10px;
+	background-color: #FF7F7f;
+	text-align:center;
+}
+
+#someOther{
+	text-align: center;
+	background-color: #FF7F7f;
+
+}
