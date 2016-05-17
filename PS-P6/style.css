@@ -1,0 +1,52 @@
+body {
+	background-color:white;
+	font-family: Aria;, sans-saraif;
+}
+
+#header {
+	background-color: #ffffff;
+	text-align:center;
+	padding:10px;
+
+	
+}
+#mainbox{
+	text-align:center;
+}
+#content{
+	text-align:left;
+}
+#container{
+	text-align:center;
+	padding:10px;
+	background-color:#bc8f8f;
+}
+
+
+
+
+.navba{
+	border:5px solid grey;
+	text-align:center;
+	width:150px;
+	display:inline-block;
+}
+
+
+
+#navbar {
+	margin:auto;
+}
+
+#image{
+	padding:10px;
+	img-align:right;
+}
+
+#list{
+	text-align: center;
+
+}
+#img2{
+	img-align:left;
+}
