@@ -1,64 +1,72 @@
-
 # applyCipher.py
 # A program to encrypt/decrypt user text
-# using Caesars Cipher
+# using Caesar's Cipher
 # 
-# Author: rc.sanchez.michelle [at] leadps.org
-
+# Author: mflax [at] leadps.org
+#
+#
 # makes a mapping of encoded alphabet to decoded alphabet
+#
 # arguments: key
 # returns: dictionary of mapped letters
-print("Welcome to Contacts!!")
 
-# empty list so you can add to it
-contacts = {}
-choice = 1
-# loops for caesar's cypher
-while choice != 0:
-	print("What would you like to do?")
-	print("1). Add a phone number.")
-	print("2). Print the full list of contacts.")
-	print("3). Enter a name to retrieve that contact's phone number.")
-	print("4). Remove a contact.")
-	print("5). Change the number of a contact.")
-	print("0). Exit the Contacts app.")	
-	choice = int(raw_input())
-# This starts the if choices/options for each and every one of the options that there is	
-	# This adds the name and number if choice entered equalls 1
-	if choice == 1:
-		print("What's the name of your contact?")
-		name = raw_input()
-		print("What's the number of your contact?")
-		num = raw_input()
-		contacts[name] = num
-	# This prints all the contacts if choice is 2
-	if choice == 2:
-		print(contacts)
+import string 
+
+def createDictionary(key):
+	up = string.ascii_uppercase
+	low = string.ascii_lowercase
+	alphaDict = {}
+	count = 0 
+	for letter in up:
+		alphaDict[letter] = up[(key + count) % 26]		
+		count = count + 1
+	for letter in low: 
+		alphaDict[letter] = low[(key + count) % 26]
+		count = count + 1
+	return alphaDict 
 	
-	#This will retrieve a certain number if choice is 3
-	if choice == 3:
-		print("Who's number would you like?")
-		name = raw_input()
-		print("OK, here's the number:")
-		# calls for specific contact
-		print(contacts[name])
+#gets the encrypted message from user
+# arguments: 
+#returns: encoded msg
+def getMessage(message):
+	return message
 
-	# this deletes a number if choice is 4
-	if choice == 4:
-		print("Who's number would you like to delete?")
-		name = raw_input()
-		print("OK, number has been deleted.")
-		# deletes a number
-		del contacts[name]
+# for each letter in the message, decodes and records &  records the decoded letter
+# arguments: encoded message and dictionary
+# return: decoded message
+def decodeMessage(message, dictionary):
+	newMsg = ''
+	for k in message:
+		eachL = dictionary[k]
+		newMsg = newMsg + eachL				
+	return newMsg
 
-	# will change a number if choice entered is 5
-	if choice == 5:
-		print("Who's number would you like to change?")
-		name = raw_input()
-		print("Please enter new number:")
-		num = raw_input()
-		# changes 
-		contacts[name] = num
-		print("Number has been updated.")
+# outputs the message to the terminal
+#a\rguments: decoded message
+# returns:
+def printMessage(decodedMessage):
+	print(decodedMessage)
 
-	# the end of the program
+
+# where the execution starts
+try:
+
+# ask the user for key
+	print("What key would you like to decode?")
+	key = int(raw_input())
+	
+	dictionary = createDictionary(key)
+	
+	print("What message would you like to decode?")
+	message = raw_input()
+
+# saves message
+	encodedMessage = getMessage(message)
+	
+# decodes message
+	decodeMessage = decodeMessage(encodedMessage, dictionary)
+	print("Here's the decoding of your message:")
+	printMessage(decodeMessage)
+
+except:
+	print("Sorry, this code cannot be accepted.")
